@@ -85,5 +85,35 @@ function shuffleDeck(array) {
 
   }
 
-  generateDecks();
-  createGameDeck();
+
+
+let cardImgDiv = document.getElementById('cardImgDiv');
+let prevBtn = document.getElementById('prevBtn');
+let nextBtn = document.getElementById('nextBtn');
+let cardSelected = document.getElementById('cardSlct');
+
+function displayedCard() {
+    let i = 0;
+    cardSelected.src = gameDeck[i];
+    nextBtn.addEventListener("click", function() {
+        if (i < 14) {
+        i++;
+        cardSelected.src = gameDeck[i];}
+        else {return false;}
+    })
+
+    prevBtn.addEventListener("click", function() {
+        if (i > 0) {
+            i--;
+            cardSelected.src = gameDeck[i];
+        }
+        else {return false;}
+    }
+        
+        )
+    
+}
+
+generateDecks();
+createGameDeck();
+displayedCard();
